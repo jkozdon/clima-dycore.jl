@@ -1,6 +1,12 @@
+[[Adapt]]
+deps = ["LinearAlgebra", "Test"]
+git-tree-sha1 = "04d15700419b6949d76be1428ab6e0277ff43b06"
+uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
+version = "0.4.1"
+
 [[Atmo]]
 deps = ["Canary", "MPI", "Printf", "Utils", "WriteVTK"]
-path = "src/Atmo"
+path = "../../src/Atmo"
 uuid = "9119886c-ffd7-11e8-08c3-e1f5e1b10203"
 version = "0.0.0"
 
@@ -18,6 +24,24 @@ deps = ["Libdl", "Pkg", "SHA", "Test"]
 git-tree-sha1 = "055eb2690182ebc31087859c3dd8598371d3ef9e"
 uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 version = "0.5.3"
+
+[[CUDAapi]]
+deps = ["Libdl", "Logging", "Test"]
+git-tree-sha1 = "da085c9c8668dbb37bd84573d4257b09cf33d053"
+uuid = "3895d2a7-ec45-59b8-82bb-cfc6a382f9b3"
+version = "0.5.3"
+
+[[CUDAdrv]]
+deps = ["CUDAapi", "Libdl", "Printf", "Test"]
+git-tree-sha1 = "94a3b9afb137e8d08136b334e51a25375557ca24"
+uuid = "c5f51814-7f29-56b8-a69c-e4d8f6be1fde"
+version = "0.8.6"
+
+[[CUDAnative]]
+deps = ["Adapt", "CUDAapi", "CUDAdrv", "InteractiveUtils", "LLVM", "Libdl", "Pkg", "Printf", "Statistics", "Test"]
+git-tree-sha1 = "ee585a140c32abb9d3d3a903145ce46c69bc4507"
+uuid = "be33ccc6-a3ff-5ff2-a52e-74243cff1e17"
+version = "0.10.1"
 
 [[Canary]]
 deps = ["MPI"]
@@ -54,6 +78,12 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 [[InteractiveUtils]]
 deps = ["LinearAlgebra", "Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
+
+[[LLVM]]
+deps = ["InteractiveUtils", "Libdl", "Printf", "Test", "Unicode"]
+git-tree-sha1 = "d98bd8e6e56591caceb7db300a6877fb6daca6ba"
+uuid = "929cbde3-209d-540e-8aea-75f648917ca0"
+version = "1.0.0"
 
 [[LibGit2]]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
@@ -148,7 +178,7 @@ uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
 [[Utils]]
-path = "src/Utils"
+path = "../../src/Utils"
 uuid = "7f913980-ffd7-11e8-3449-f5d197202f6f"
 version = "0.0.0"
 
