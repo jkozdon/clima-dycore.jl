@@ -1,8 +1,13 @@
 # clima-dycore.jl
-Possible Julia based common dynamical core for CLIMA. 
 
-### Status
-This is a first experiment in how a CLIMA git setup might look. 
+## Setup
 
-### Versioning
-What versioing shall we use - major.minor.maintenance tags?
+```bash
+julia --project=. -e "using Pkg; Pkg.instantiate(); Pkg.API.precompile()"
+```
+
+## Running locally
+
+```bash
+mpirun -n 4 julia --project=. drivers/atmo/rising_thermal_bubble.jl
+```
