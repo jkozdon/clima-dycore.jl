@@ -26,15 +26,16 @@ function main()
   @hascuda device!(mpirank % length(devices()))
 
   #Initial Conditions
+  parameters = defaultparameters()
+  p0::DFloat      = parameters[:p0]
+  R_gas::DFloat   = parameters[:R_gas]
+  c_p::DFloat     = parameters[:c_p]
+  c_v::DFloat     = parameters[:c_v]
+  gravity::DFloat = parameters[:gravity]
+  initialize(parameters)
   function ic(dim, x...)
     # FIXME: Type generic?
     DFloat = eltype(x)
-    γ::DFloat       = _γ
-    p0::DFloat      = _p0
-    R_gas::DFloat   = _R_gas
-    c_p::DFloat     = _c_p
-    c_v::DFloat     = _c_v
-    gravity::DFloat = _gravity
 
     u0 = 0
     r = sqrt((x[1]-500)^2 + (x[dim]-350)^2 )
